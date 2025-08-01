@@ -1,2 +1,16 @@
-# zram-setup
-Script to configure ZRAM-only swap on Debian 12 — boosts performance, reduces SSD wear, and optimizes memory using compressed RAM.
+# ZRAM Setup for Debian 12
+
+A simple script to configure ZRAM-only swap on Debian 12 with optimal settings.
+
+## Features
+
+- Sets up zram-tools
+- Configures 100% RAM swap with zstd compression
+- Disables disk-based swap (optional)
+- Enables the ZRAM service at boot
+
+## Usage
+
+```bash
+chmod +x setup-zram.sh
+./setup-zram.sh
