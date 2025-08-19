@@ -12,5 +12,6 @@ A simple script to configure ZRAM-only swap on Debian 12 with optimal settings.
 ## Usage
 
 ```bash
+cd ~/zram-setup
 chmod +x setup-zram.sh
 ./setup-zram.sh
