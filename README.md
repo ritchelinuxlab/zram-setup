@@ -1,4 +1,4 @@
-# ZRAM Setup for Debian 12
+# ZRAM Setup for Debian 12/Ubuntu 24.04
 
 A simple script to configure ZRAM-only swap on Debian 12 with optimal settings.
 
