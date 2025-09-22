@@ -1,4 +1,3 @@
-# ZRAM Setup for Debian 12/Ubuntu 24.04
 # ZRAM Setup Scripts
 
 [![ShellCheck](https://github.com/ritchelinuxlab/zram-setup/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/ritchelinuxlab/zram-setup/actions/workflows/shellcheck.yml)
@@ -16,9 +15,30 @@ Simple scripts to configure **ZRAM swap** on Linux.
 - Disables disk-based swap (optional)
 - Enables the ZRAM service at boot
 
-## Usage
+## 📂 Contents
+- `debian/` → Script for Debian 12/13, Ubuntu 24.04 (uses `zram-tools`)
+- `arch/`   → Script for Arch Linux (uses `zram-generator`)
 
+## 🚀 Usage
+
+### Debian / Ubuntu
 ```bash
-cd ~/zram-setup
-chmod +x setup-zram.sh
-./setup-zram.sh
+cd debian
+chmod +x setup-zram-debian.sh
+./setup-zram-debian.sh
+
+### Arch Linux
+cd arch
+chmod +x setup-zram-arch.sh
+./setup-zram-arch.sh
+
+### ✅ Verification
+cat /proc/swaps
+free -h
+zramctl   # optional, part of util-linux
+
+### 🧹 Rollback
+sudo systemctl disable --now zramswap.service        # Debian
+sudo systemctl disable --now systemd-zram-setup@zram0.service   # Arch
+
+

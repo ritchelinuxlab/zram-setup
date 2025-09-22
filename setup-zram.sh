@@ -1,18 +1,17 @@
 #!/bin/bash
-# ZRAM configuration script for Debian 12 GNOME
+# ZRAM configuration script for Arch Linux
 
 set -e
 
-echo "🔧 Installing zram-tools..."
-sudo apt update
-sudo apt install -y zram-tools
+echo "🔧 Installing zram-generator..."
+sudo pacman -Syu --noconfirm zram-generator
 
-echo "📝 Configuring /etc/default/zramswap..."
-sudo tee /etc/default/zramswap > /dev/null <<EOF
-ENABLED=true
-PERCENT=100
-ALGO=zstd
-DEVICES=1
+echo "📝 Configuring /etc/systemd/zram-generator.conf..."
+sudo tee /etc/systemd/zram-generator.conf > /dev/null <<EOF
+[zram0]
+zram-size = ram
+compression-algorithm = zstd
+swap-priority = 100
 EOF
 
 echo "🔁 Setting vm.swappiness=100..."
@@ -21,9 +20,14 @@ vm.swappiness=100
 EOF
 sudo sysctl -p /etc/sysctl.d/99-zram.conf
 
-echo "📦 Enabling zramswap.service..."
-sudo systemctl enable --now zramswap.service
+echo "📦 Enabling systemd swap devices..."
+sudo systemctl daemon-reexec
+sudo systemctl start /dev/zram0
+sudo systemctl enable systemd-zram-setup@zram0.service
 
 echo "✅ ZRAM setup complete!"
-echo "You can verify with: cat /proc/swaps && free -h && zramctl (if installed)"
+echo "You can verify with:"
+echo "  cat /proc/swaps"
+echo "  free -h"
+echo "  zramctl"
 

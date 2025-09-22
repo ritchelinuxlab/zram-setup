@@ -1,0 +1,17 @@
+license:
+  name: MIT License
+  identifier: MIT
+  year: 2025
+  copyright_holder: Ritche Gerona
+  permissions:
+    - commercial-use
+    - modification
+    - distribution
+    - private-use
+  conditions:
+    - include-copyright
+    - include-license
+  limitations:
+    - liability
+    - warranty
+
