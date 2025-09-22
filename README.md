@@ -14,50 +14,56 @@ This repository provides simple Bash scripts to configure **ZRAM swap** on Arch 
 ## 📦 Installation
 
 Clone the repository:
-
 ```bash
 git clone https://github.com/ritchelinuxlab/zram-setup.git
 cd zram-setup
 
-
+```
 
 ## Features
-
 - Sets up zram-tools
 - Configures 100% RAM swap with zstd compression
 - Disables disk-based swap (optional)
 - Enables the ZRAM service at boot
 
 ## 📂 Contents
-- `debian/` → Script for Debian 12/13, Ubuntu 24.04 (uses `zram-tools`)
 - `arch/`   → Script for Arch Linux (uses `zram-generator`)
+- `debian/` → Script for Debian 12/13, Ubuntu 24.04 (uses `zram-tools`)
 
 ▶️ Usage
 For Arch Linux:
+```bash
 chmod +x setup-zram-arch.sh
 ./setup-zram-arch.sh
-
+```
 For Debian / Ubuntu:
+```bash
 chmod +x setup-zram-debian.sh
 ./setup-zram-debian.sh
-
+```
 ✅ Verification
 
 Check if ZRAM is enabled:
+```bash
 cat /proc/swaps
 free -h
 zramctl
+```
+🧹 Rollback
 
-## 🧹 Rollback
-# Arch
+Arch
+```bash
 sudo systemctl disable --now systemd-zram-setup@zram0.service
+```
 
-# Debian
+Debian
+```bash
 sudo systemctl disable --now zramswap.service
+```
 
 
 📜 License
-
+```yaml
 This project is licensed under the MIT License
 
 
