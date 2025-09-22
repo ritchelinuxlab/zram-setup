@@ -1,6 +1,13 @@
 # ZRAM Setup for Debian 12/Ubuntu 24.04
+# ZRAM Setup Scripts
 
-A simple script to configure ZRAM-only swap on Debian 12 with optimal settings.
+[![ShellCheck](https://github.com/ritchelinuxlab/zram-setup/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/ritchelinuxlab/zram-setup/actions/workflows/shellcheck.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Last Commit](https://img.shields.io/github/last-commit/ritchelinuxlab/zram-setup)
+![Stars](https://img.shields.io/github/stars/ritchelinuxlab/zram-setup?style=social)
+
+Simple scripts to configure **ZRAM swap** on Linux.
+
 
 ## Features
 
