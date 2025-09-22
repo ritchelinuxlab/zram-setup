@@ -21,23 +21,23 @@ Simple scripts to configure **ZRAM swap** on Linux.
 
 ## 🚀 Usage
 
-### Debian / Ubuntu
+## Debian / Ubuntu
 ```bash
 cd debian
 chmod +x setup-zram-debian.sh
 ./setup-zram-debian.sh
 
-### Arch Linux
+## Arch Linux
 cd arch
 chmod +x setup-zram-arch.sh
 ./setup-zram-arch.sh
 
-### ✅ Verification
+## ✅ Verification
 cat /proc/swaps
 free -h
 zramctl   # optional, part of util-linux
 
-### 🧹 Rollback
+## 🧹 Rollback
 sudo systemctl disable --now zramswap.service        # Debian
 sudo systemctl disable --now systemd-zram-setup@zram0.service   # Arch
 
