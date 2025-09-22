@@ -1,5 +1,3 @@
-# ZRAM Setup Scripts
-
 [![ShellCheck](https://github.com/ritchelinuxlab/zram-setup/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/ritchelinuxlab/zram-setup/actions/workflows/shellcheck.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Last Commit](https://img.shields.io/github/last-commit/ritchelinuxlab/zram-setup)
