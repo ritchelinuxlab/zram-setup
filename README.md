@@ -63,17 +63,8 @@ sudo systemctl disable --now zramswap.service
 
 
 📜 License
-```yaml
-This project is licensed under the MIT License
 
+This project is licensed under the MIT License.
 
----
-
-✨ With this structure:  
-- Your code snippets will show up as **highlighted Bash**.  
-- Users instantly see which script to run depending on their distro.  
-- Your repo looks polished and professional.  
-
-👉 Do you want me to also prepare **two separate scripts** (`setup-zram-arch.sh` and `setup-zram-debian.sh`) so your README matches your repo’s files?
 
 
